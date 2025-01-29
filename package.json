@@ -1,6 +1,6 @@
 {
-  "name": "aiqe-dataservice-backend",
-  "version": "0.0.0",
+  "name": "cdp-node-backend-template",
+  "version": "0.1.0",
   "description": "CDP Backend Template",
   "main": ".server/index.js",
   "type": "module",
@@ -22,7 +22,7 @@
     "lint:js": "eslint --cache .",
     "lint:types": "tsc --build tsconfig.json",
     "postversion": "git add package.json package-lock.json && git commit -m $npm_package_version",
-    "test": "jest --coverage --verbose",
+    "test": "jest --coverage --verbose --runInBand",
     "test:watch": "jest --watch",
     "server:watch": "nodemon --exec tsx --enable-source-maps ./src",
     "server:debug": "nodemon --exec tsx --enable-source-maps --inspect ./src",
@@ -34,6 +34,7 @@
   "license": "OGL-UK-3.0",
   "dependencies": {
     "@babel/runtime": "^7.26.0",
+    "@defra/hapi-tracing": "^1.0.0",
     "@elastic/ecs-pino-format": "^1.5.0",
     "@hapi/boom": "^10.0.1",
     "@hapi/hapi": "^21.3.12",

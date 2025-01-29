@@ -68,7 +68,7 @@ describe('#startServer', () => {
       )
       expect(mockHapiLoggerInfo).toHaveBeenNthCalledWith(
         3,
-        'MongoDb connected to aiqe-dataservice-backend'
+        'MongoDb connected to cdp-node-backend-template'
       )
       expect(mockHapiLoggerInfo).toHaveBeenNthCalledWith(
         4,
