@@ -24,11 +24,11 @@ describe('#mongoDb', () => {
     })
 
     test('MongoDb should have expected database name', () => {
-      expect(server.db.databaseName).toBe('aiqe-dataservice-backend')
+      expect(server.db.databaseName).toBe('cdp-node-backend-template')
     })
 
     test('MongoDb should have expected namespace', () => {
-      expect(server.db.namespace).toBe('aiqe-dataservice-backend')
+      expect(server.db.namespace).toBe('cdp-node-backend-template')
     })
   })
 

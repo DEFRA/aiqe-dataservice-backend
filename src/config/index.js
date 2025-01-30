@@ -30,7 +30,7 @@ const config = convict({
   serviceName: {
     doc: 'Api Service Name',
     format: String,
-    default: 'aiqe-dataservice-backend'
+    default: 'cdp-node-backend-template'
   },
   root: {
     doc: 'Project root',
@@ -51,6 +51,19 @@ const config = convict({
     doc: 'If this application running in the test environment',
     format: Boolean,
     default: isTest
+  },
+  osNamesApiKey: {
+    doc: 'OS Name Places key',
+    format: '*',
+    sensitive: true,
+    default: 'OS_NAMES_API_KEY',
+    env: 'OS_NAMES_API_KEY'
+  },
+  osNamesApiUrl: {
+    doc: 'OS Name Places url',
+    format: String,
+    default: 'https://api.os.uk/search/names/v1/find?query=',
+    env: 'OS_NAMES_API_URL'
   },
   log: {
     enabled: {
@@ -88,7 +101,7 @@ const config = convict({
   mongoDatabase: {
     doc: 'database for mongodb',
     format: String,
-    default: 'aiqe-dataservice-backend',
+    default: 'cdp-node-backend-template',
     env: 'MONGO_DATABASE'
   },
   httpProxy: {
@@ -116,6 +129,20 @@ const config = convict({
     format: Boolean,
     default: isProduction,
     env: 'ENABLE_METRICS'
+  },
+  tracing: {
+    header: {
+      doc: 'Which header to track',
+      format: String,
+      default: 'x-cdp-request-id',
+      env: 'TRACING_HEADER'
+    }
+  },
+  allowOriginUrl: {
+    doc: 'URL to Access-Control-Allow-Origin',
+    format: String,
+    default: '',
+    env: 'ACCESS_CONTROL_ALLOW_ORIGIN_URL'
   }
 })
 
