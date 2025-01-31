@@ -19,17 +19,16 @@ async function fetchOSPlaces(request) {
       'h'
     )
     if (locationType === 'uk-location') {
-      let { results } = getOSPlaces
-
-      // const { results } = getOSPlaces
-      // return {getOSPlaces}
+      //let { results } = getOSPlaces
 
       // Remove duplicates from the results array
-      results = Array.from(
-        new Set(results.map((item) => JSON.stringify(item)))
+      if(getOSPlaces?.results){
+      getOSPlaces.results = Array.from(
+        new Set(getOSPlaces.results.map((item) => JSON.stringify(item)))
       ).map((item) => JSON.parse(item))
+    }
       const selectedMatches = processMatches(
-        results,
+        getOSPlaces?.results,
         locationNameOrPostcode,
         userLocation
       )
